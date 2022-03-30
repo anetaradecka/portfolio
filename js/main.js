@@ -1,13 +1,13 @@
+// Navbar slider
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.main-nav-mobile');
     const navLinks = document.querySelectorAll('.nav-links-mobile li');
 
     burger.addEventListener('click', () => {
-        // Toggle nav
+
         nav.classList.toggle('nav-active');
     
-        // Animate links while opening the nav
         navLinks.forEach((link, index) => {
             if (link.style.animation) {
                 link.style.animation = '';
@@ -17,12 +17,12 @@ const navSlide = () => {
             
         });
         
-        // Burger animation 
         burger.classList.toggle('toggle');
     });
 
 }
 
+// Screen width check on page load
 window.onload = (event) => {
     const nav = document.querySelector('.main-nav-desktop');
     
@@ -31,6 +31,7 @@ window.onload = (event) => {
     } else { return }
   };
 
+// Screen width check on screen resizing
 window.onresize = (event) => {
     const nav = document.querySelector('.main-nav-desktop');
 
@@ -41,6 +42,7 @@ window.onresize = (event) => {
     }
 }
 
+// Navbar color change on scroll
 window.onscroll = (event) => {
     let nav = document.querySelector('.main-nav-desktop'); 
     
@@ -50,6 +52,7 @@ window.onscroll = (event) => {
     
 }
 
+// Header typing effect
 const typing = () => {
     const texts = ['to design', ' to create', 'to edit pages.'];
     let count = 0;
@@ -74,7 +77,7 @@ const typing = () => {
     }());
 }
 
-//If we want to have more functions
+// Page engine
 const app = () => {
     navSlide();
     typing();

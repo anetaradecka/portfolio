@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Nunito+Sans:wght@300;400;600;700;800;900&family=Special+Elite&display=swap');
+@import url("navbar.css");
+@import url("hero.css");
+
+:root {
+    /* Colors */
+    --background: #fffffe;
+    --card-background: #fafafa;
+    --primary-orange: #fcc8a6;
+    --secondary-orange: #fcd1b0;
+    --primary-green: #f2f1ec;
+    --primary-grey: #ebeef0;
+    --headline-dark: #0d0d0d;
+    --headline-light: #fffffe;
+    --sub-headline: #2a2a2a;
+    --paragraph-dark: #2a2a2a;
+    --paragraph-light: #fffffe;
+
+    /* Fonts */
+    --primary-font: 'Nunito Sans', sans-serif;
+    --secondary-font: 'Special Elite';
+    --decorative-font: 'Londrina Outline';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    overflow-x: hidden;
+    min-height: 100%;
+    font-size: 21px; /* Default value for the whole page. Based on it other values will be calculated in rem units */
+}
+
+body {
+    min-height: 100%;
+    overflow-x: hidden;
+    position: relative;
+    font-family: var(--primary-font);
+}
+
+
+
+
+
+

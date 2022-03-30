@@ -1,39 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Nunito+Sans:wght@300;400;600;700;800;900&family=Special+Elite&display=swap');
-
-:root {
-    /* Colors */
-    --background: #fffffe;
-    --card-background: #fafafa;
-    --primary-orange: #fcc8a6;
-    --secondary-orange: #fcd1b0;
-    --primary-green: #f2f1ec;
-    --primary-grey: #ebeef0;
-    --headline-dark: #0d0d0d;
-    --headline-light: #fffffe;
-    --sub-headline: #2a2a2a;
-    --paragraph-dark: #2a2a2a;
-    --paragraph-light: #fffffe;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    height: 100%;
-    overflow-x: hidden;
-    min-height: 100%;
-    font-size: 21px; /* To jest defaultowa wielkość dla całej strony i do niej będziemy ustalać inne wielkości w jednostkach rem*/
-}
-
-body {
-    min-height: 100%;
-    overflow-x: hidden;
-    position: relative;
-    font-family: 'Nunito Sans', sans-serif;
-}
+@import url("style.css");
+/* Navbar settings */
 
 header {
     width: 100%;
@@ -96,8 +62,8 @@ nav {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 1rem;
-    font-family: 'Nunito Sans';
-    font-weight: 600; /* defaultowa wartość to 400*/
+    font-family: var(--primary-font);
+    font-weight: 600; /* default value 400 */
 }
 
 .main-nav {
@@ -148,7 +114,7 @@ nav {
 
 .nav-link {
     opacity: 0;
-    font-family: 'Special Elite';
+    font-family: var(--secondary-font);
 }
 
 .nav-link a {
@@ -236,121 +202,5 @@ nav {
     .nav-link a {
         border-bottom: none;
         padding: 12px 10px;
-    }
-    
+    } 
 }
-
-/* Hero section */
-
-.intro {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.intro h1 {
-    color: var(--headline);
-    font-size: 2rem;
-    font-family: 'Londrina Outline';
-    margin-bottom: 20px;
-}
-
-.intro h2 {
-    color: var(--sub-headline);
-    font-size: 1.1rem;
-    font-family: 'Special Elite';
-}
-
-.subheadline {
-    display: flex;
-}
-
-.typing {
-    position: relative;
-    margin-left: 10px;
-}
-
-.typing::after {
-    content: "";
-    position: absolute;
-    width: 1px;
-    right: -1px;
-    height: 80%;
-    border-right: 3px solid var(--sub-headline);
-    animation: blink 0.6s infinite ease;
-}
-
-@keyframes blink {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.media {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0 10px 0;
-}
-
-.media i {
-    padding: 10px;
-    margin: 0 5px 0 5px;
-    border: 1px solid var(--paragraph-dark);
-    border-radius: 50%;
-}
-
-.media i:hover {
-    border: 1px solid var(--paragraph-light);
-    border-radius: 50%;
-    color: var(--paragraph-light);
-}
-
-.test-content {
-    width: 100%;
-    height: 1000px;
-    background: var(--card-background);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* Tablet */
-@media screen and (min-width: 576px) and (max-width: 991px) {
-    
-    header {
-        height: 40vh;
-    }
-
-}
-
-/* Desktop */
-@media screen and (min-width: 992px) {
-    
-    header {
-        height: 80vh;
-        padding-top: 15vh;
-    }
-
-    .intro {
-        width: 70%;
-        padding-top: 10vh;
-    }
-
-    .intro h1 {
-        font-size: 3rem;
-    }
-    
-    .intro h2 {
-        font-size: 2rem;
-    }
-}
-
-
