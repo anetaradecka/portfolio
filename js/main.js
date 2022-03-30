@@ -77,6 +77,40 @@ const typing = () => {
     }());
 }
 
+// Projects section sliding in vertical
+function debounce(func, wait = 10, immediate = true) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  }
+
+const projectsSlider = document.querySelectorAll('.slide-in');
+
+function checkSlide(e) {
+  
+  projectsSlider.forEach( project => {
+      const slideInAt = (window.scrollY + window.innerHeight) -
+          project.offsetHeight / 3; 
+      
+      const isHalfShown = slideInAt > project.offsetTop;
+
+      if(isHalfShown) {
+          project.classList.add('active');
+      } 
+  });
+}
+
+window.addEventListener('scroll', debounce(checkSlide));
+
 // Page engine
 const app = () => {
     navSlide();
