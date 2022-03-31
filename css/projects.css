@@ -1,20 +1,49 @@
 @import url("style.css");
 /* Projects section */
 
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--mobile-section) 0;
+}
+
+.projects h2,
+.other-projects h2 {
+    width: 90%;
+    justify-self: flex-start;
+    max-width: 1024px;
+}
+
+.projects .index,
+.other-projects .index {
+    font-size: 1.1rem;
+    color: var(--card-background);
+}
+
 .grid-template {
     display: grid;
     width: 90%;
-    margin: var(--mobile-section) auto;
+    max-width: 1024px;
+    margin: var(--inner-mobile-section) auto;
     grid-template-columns: 1fr;
 }
 
-.project-content {
+.grid-template:first-of-type {
+    margin-top: 10px;
+}
+
+.projects .project-content {
     grid-area: 1 / 1 / 2 / 2;
+}
+
+.project-content {
     z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    padding: 10px 0;
 }
 
 .project-content h3,
@@ -23,8 +52,8 @@
     padding: 10px 0 10px 15px;
 }
 
-.project-content h3 {
-    /* padding: 10px 0; */
+.project-content h3,
+.project-content h4 {
     font-family: var(--secondary-font);
     color: var(--paragraph-light);
 }
@@ -44,7 +73,6 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    /* padding: 10px 0; */
 }
 
 .project-content ul li {
@@ -58,7 +86,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /* padding: 10px 0; */
 }
 
 .project-content .socials i {
@@ -73,14 +100,12 @@
 
 .project-img {
     grid-area: 1 / 1 / 2 / 2;
-    /* display: none; */
     position: relative;
     z-index: 0;
 }
 
 .project-img img {
     width: 100%;
-    /* auto spowoduje nierówność przy obrazku  */
     height: 100%; 
     border: 1px solid var(--card-background);
     border-radius: 5px;
@@ -116,12 +141,39 @@
     transform: translateY(0%);
 }
 
+.slide-in-box {
+    opacity: 0;
+    transition: all .5s;
+}
+
+.slide-in-box {
+    transform: translateY(-20%);
+}
+
+.slide-in-box.active {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
 /* Tablet and Desktop */
 @media screen and (min-width: 576px) {
-    .grid-template {
-        margin-top: var(--section);
+
+    .projects {
+        margin: var(--section) 0;
+    }
+
+    .projects h2 {
+        width: 60%;
+    }
+
+    .projects .grid-template {
+        margin-top: var(--inner-section);
         width: 60%;
         grid-template-columns: repeat(12, 1fr); 
+    }
+
+    .grid-template:first-of-type {
+        margin-top: 20px;
     }
     
     .project-content.right {
@@ -158,10 +210,6 @@
     .project-img::after {
         opacity: .5;
     }
-
-    /* .project-img {
-        display: initial;
-    } */
 }
 
 /* Tablet */

@@ -77,7 +77,7 @@ const typing = () => {
     }());
 }
 
-// Projects section sliding in vertical
+// Projects slider vertical
 function debounce(func, wait = 10, immediate = true) {
     var timeout;
     return function() {
@@ -93,11 +93,11 @@ function debounce(func, wait = 10, immediate = true) {
     };
   }
 
-const projectsSlider = document.querySelectorAll('.slide-in');
+const projectsSliderVertical = document.querySelectorAll('.slide-in');
 
 function checkSlide(e) {
   
-  projectsSlider.forEach( project => {
+    projectsSliderVertical.forEach( project => {
       const slideInAt = (window.scrollY + window.innerHeight) -
           project.offsetHeight / 3; 
       
@@ -110,6 +110,47 @@ function checkSlide(e) {
 }
 
 window.addEventListener('scroll', debounce(checkSlide));
+
+// Projects slider horizontal
+const projectsSliderHorizontal = document.querySelectorAll('.other-projects .slide-in-box');
+const sliderArray = [...projectsSliderHorizontal];
+
+function checkSlideHorizontal(e) {
+    let index = 0;
+
+    sliderArray.forEach((item, index) => {
+        setTimeout(() => {
+            if (index === 0 ) {
+                const slideInAt = (window.scrollY + window.innerHeight) -
+                        item.offsetHeight / 3; 
+          
+                const isHalfShown = slideInAt > item.offsetTop;
+    
+                if(isHalfShown) {
+                    item.classList.add('active');
+                } 
+            } else if (
+                (index > 0) && 
+                (sliderArray[index-1].classList.contains('active'))
+                ) {
+                    
+                const slideInAt = (window.scrollY + window.innerHeight) -
+                        item.offsetHeight / 3; 
+    
+                const isHalfShown = slideInAt > item.offsetTop;
+                
+                if(isHalfShown) {
+                    
+                    item.classList.add('active');
+                }
+            }  
+        }, index * 500);
+        
+    });
+
+}
+
+window.addEventListener('scroll', debounce(checkSlideHorizontal));
 
 // Page engine
 const app = () => {

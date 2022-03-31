@@ -5,16 +5,18 @@
 @import url("navbar.css");
 @import url("hero.css");
 @import url("projects.css");
+@import url("other-projects.css");
 
 :root {
     /* Colors */
-    --sticky-nav-background: #fffffe;
+    /* --sticky-nav-background: #fffffe; */
     --background: #fcc8a6;
     /* --background: #fcc8a6; */
     /* --card-background: #fafafa; */
     --primary-orange: #fcc8a6;
-    --card-background: #fbb7a5;
+    --card-background: #fa8b6d;
     --secondary-orange: #fcd1b0;
+    --sticky-nav-background: #fcd5b7;
     --primary-green: #f2f1ec;
     --primary-grey: #ebeef0;
     --headline-dark: #0d0d0d;
@@ -30,7 +32,9 @@
 
     /* Margins */
     --mobile-section: 10vh;
-    --section: 15vh;
+    --section: 20vh;
+    --inner-mobile-section: 5vh;
+    --inner-section: 10vh;
 }
 
 * {
@@ -52,6 +56,49 @@ body {
     position: relative;
     font-family: var(--primary-font);
     background: var(--background);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+.projects h2,
+.other-projects h2 {
+    color: var(--paragraph-light);
+}
+
+/* Tablet and Desktop */
+@media screen and (min-width: 576px) {
+
+}
+
+/* Tablet */
+@media screen and (min-width: 576px) and (max-width: 991px) {
+
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.3rem; 
+    }
 }
 
 
