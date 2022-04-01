@@ -112,7 +112,7 @@ function checkSlide(e) {
 window.addEventListener('scroll', debounce(checkSlide));
 
 // Projects slider horizontal
-const projectsSliderHorizontal = document.querySelectorAll('.other-projects .slide-in-box');
+const projectsSliderHorizontal = document.querySelectorAll('.other-projects .slide-in');
 const sliderArray = [...projectsSliderHorizontal];
 
 function checkSlideHorizontal(e) {
@@ -144,7 +144,7 @@ function checkSlideHorizontal(e) {
                     item.classList.add('active');
                 }
             }  
-        }, index * 500);
+        }, index * 700);
         
     });
 

@@ -1,7 +1,8 @@
 @import url("style.css");
 /* Projects section */
 
-.projects {
+.projects,
+.other-projects {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,6 +26,9 @@
     display: grid;
     width: 90%;
     max-width: 1024px;
+}
+
+.projects .grid-template {
     margin: var(--inner-mobile-section) auto;
     grid-template-columns: 1fr;
 }
@@ -43,13 +47,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 10px 0;
+    padding: 20px;
 }
 
 .project-content h3,
+.project-content p,
 .project-content ul,
 .project-content .socials {
-    padding: 10px 0 10px 15px;
+    padding: 10px 0;
 }
 
 .project-content h3,
@@ -64,7 +69,6 @@
 
 .project-content p {
     font-size: 0.9rem;
-    padding: 15px 20px;
     color: var(--paragraph-light);
 }
 
@@ -107,7 +111,7 @@
 .project-img img {
     width: 100%;
     height: 100%; 
-    border: 1px solid var(--card-background);
+    border: 1px solid var(--background);
     border-radius: 5px;
 }
 
@@ -141,7 +145,7 @@
     transform: translateY(0%);
 }
 
-.slide-in-box {
+/* .slide-in-box {
     opacity: 0;
     transition: all .5s;
 }
@@ -153,22 +157,22 @@
 .slide-in-box.active {
     opacity: 1;
     transform: translateY(0%);
-}
+} */
 
 /* Tablet and Desktop */
 @media screen and (min-width: 576px) {
 
-    .projects {
+    .projects,
+    .other-projects {
         margin: var(--section) 0;
     }
 
-    .projects h2 {
-        width: 60%;
+    .projects .project-content {
+        padding: 0;
     }
 
     .projects .grid-template {
         margin-top: var(--inner-section);
-        width: 60%;
         grid-template-columns: repeat(12, 1fr); 
     }
 
@@ -189,14 +193,10 @@
         grid-area: 1 / 4 / 2 / 13;
     }
 
-    .project-content p {
+    .projects .project-content p {
         background: var(--card-background);
-    }
-
-    .project-content h3,
-    .project-content ul,
-    .project-content socials {
-        padding: 10px 0;
+        padding: 15px;
+        border-radius: 5px;
     }
     
     .project-img.left {
@@ -214,13 +214,20 @@
 
 /* Tablet */
 @media screen and (min-width: 576px) and (max-width: 991px) {
-    .grid-template {
+    
+    .projects h2,
+    .projects .grid-template {
         width: 80%;
     }
+
 }
 
 /* Desktop */
 @media screen and (min-width: 992px) {
-    
+
+    .projects h2,
+    .projects .grid-template {
+        width: 60%;
+    }
 
 }
